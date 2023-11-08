@@ -13,7 +13,8 @@ Imports:
     snakecase,
     stringr,
     tidyr,
-    usethis
+    usethis,
+    styler
 Encoding: UTF-8
 Suggests: 
     gitcreds,
