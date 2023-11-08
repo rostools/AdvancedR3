@@ -14,7 +14,8 @@ Imports:
     stringr,
     tidyr,
     usethis,
-    styler
+    styler,
+    targets
 Encoding: UTF-8
 Suggests: 
     gitcreds,
