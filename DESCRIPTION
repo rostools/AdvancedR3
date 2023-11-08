@@ -16,4 +16,7 @@ Imports:
     usethis
 Encoding: UTF-8
 Suggests: 
+    gitcreds,
     renv
+URL: https://github.com/rostools/AdvancedR3
+BugReports: https://github.com/rostools/AdvancedR3/issues
