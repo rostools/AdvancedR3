@@ -8,8 +8,19 @@ editor:
     canonical: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup}
+library(tidyverse)
+source(here::here("R/functions.R"))
+lipidomics <- read_csv(here::here("data/lipidomics.csv"))
+```
+
+## Basic statistics
+
+```{r basic-stats}
+lipidomics %>% 
+    group_by(metabolite) %>%
+    summarise(across(value, list(mean = mean, sd = sd))) %>%
+    mutate(across(where(is.numeric), ~round(.x, digits = 1)))
 ```
 
 ```{r}
