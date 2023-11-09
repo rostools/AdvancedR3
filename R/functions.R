@@ -71,6 +71,27 @@ create_recipe_spec <- function(data, metabolite_variable) {
 }
 
 
+#' Create a workflow object of the model and the transformations.
+#'
+#' @param model_specs The model specifications.
+#' @param recipe_specs The recipe specifications.
+#'
+#' @return A workflow object.
 
+create_model_workflow <- function(model_specs, recipe_specs) {
+    workflows::workflow() %>%
+        workflows::add_model(model_specs) %>%
+        workflows::add_recipe(recipe_specs)
+}
 
+#' Create a tidy output of the model results.
+#'
+#' @param workflow_fitted_model The model workflow object that has been fitted
+#'
+#' @return A data frame.
 
+tidy_model_output <- function(workflow_fitted_model) {
+    workflow_fitted_model %>%
+        workflows::extract_fit_parsnip() %>%
+        broom::tidy(exponentiate = TRUE)
+}

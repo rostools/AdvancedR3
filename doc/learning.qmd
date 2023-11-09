@@ -76,3 +76,47 @@ recipe_specs <- lipidomics_wide %>%
   create_recipe_spec(metabolite_lipid_ch_3_1)
 recipe_specs
 ```
+
+```{r}
+workflow() %>%
+  add_model(log_reg_specs) %>%
+  add_recipe(recipe_specs)
+```
+
+```{r}
+model_workflow <- create_model_workflow(
+  logistic_reg() %>%
+    set_engine("glm"),
+  lipidomics_wide %>%
+    create_recipe_spec(metabolite_lipid_ch_3_1)
+)
+model_workflow
+```
+
+```{r}
+fitted_model <- model_workflow %>%
+  fit(lipidomics_wide)
+fitted_model
+```
+
+```{r}
+fitted_model %>%
+  extract_fit_parsnip() %>%
+  tidy(exponentiate = TRUE)
+```
+
+```{r}
+fitted_model %>%
+  tidy_model_output()
+```
+
+```{r}
+create_model_workflow(
+  logistic_reg() %>%
+    set_engine("glm"),
+  lipidomics_wide %>%
+    create_recipe_spec(metabolite_lipid_ch_3_1)
+) %>%
+  fit(lipidomics_wide) %>%
+  tidy_model_output()
+```

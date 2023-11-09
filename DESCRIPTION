@@ -21,7 +21,8 @@ Imports:
     quarto,
     parsnip,
     recipes,
-    workflows
+    workflows,
+    broom
 Encoding: UTF-8
 Suggests: 
     gitcreds,
