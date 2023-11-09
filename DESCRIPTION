@@ -18,7 +18,10 @@ Imports:
     targets,
     ggplot2,
     tarchetypes,
-    quarto
+    quarto,
+    parsnip,
+    recipes,
+    workflows
 Encoding: UTF-8
 Suggests: 
     gitcreds,
@@ -26,4 +29,5 @@ Suggests:
 URL: https://github.com/rostools/AdvancedR3
 BugReports: https://github.com/rostools/AdvancedR3/issues
 Depends: 
+    tidymodels,
     tidyverse

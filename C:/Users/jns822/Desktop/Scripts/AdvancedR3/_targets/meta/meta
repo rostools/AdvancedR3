@@ -1,0 +1,9 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+descriptive_stats|function|51a9420415a7af6a
+.Random.seed|object|b18b94d1e8677929
+plot_distributions|function|f02ad1ee39314fc6
+file|stem|301125be9d4645ea|41619bbc02c4928d|ef46db3751d8e999|-1301001980|/Users/andersaskeland/during_course/AdvancedR3/data/lipidomics.csv|t19670.5147168981s|6f631a918b070454|24313|file|local|vector|||1.407||
+lipidomics|stem|697f42c227e4228b|7940706ee8ea8eb8|74cf55e34db4cd4e|-1170387675||t19670.5152930115s|30e7dd23cf8c9239|4884|rds|local|vector|||0.167||
+df_stats_by_metabolite|stem|e14dfa63df29811c|06bc50c38cf95e77|ad8e9784c096644d|1571712024||t19670.5152934155s|a0252f4d8dc0f410|403|rds|local|vector|||0.029||
+fig_metabolite_distribution|stem|eb84ab476256a087|fab028a148ebe7e6|6390de5647ae32b3|1263992679||t19670.5152941407s|290d1da874df929b|83879|rds|local|vector|||0.015||
+quarto_doc|stem||d3457f74e24f7da9|8778b46da5d6bf6f|1886859688||t19670.5154293047s||0|file|local|vector|||11.671|| System command quarto failed

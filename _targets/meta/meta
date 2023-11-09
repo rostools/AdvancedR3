@@ -1,9 +1,9 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|56d3deff080c637f|||||||||||||||
+.Random.seed|object|dbd8c61730dfaaf1|||||||||||||||
 descriptive_stats|function|51a9420415a7af6a|||||||||||||||
-df_stats_by_metabolite|stem|c3f53cf0280409c1|06bc50c38cf95e77|86f0cc93f5d3a63f|1571712024||t19670.3754933268s|a0252f4d8dc0f410|403|rds|local|vector|||0.78||
-fig_metabolite_distribution|stem|8f57610617d29132|fab028a148ebe7e6|d853bcc408fd4cad|1263992679||t19670.4247334806s|5fdacfc3afc02534|83877|rds|local|vector|||0.03||
-file|stem|301125be9d4645ea|41619bbc02c4928d|ef46db3751d8e999|-1301001980|C:/Users/jns822/Desktop/Scripts/AdvancedR3/data/lipidomics.csv|t19669.5864605027s|6f631a918b070454|24313|file|local|vector|||0.27|package tibble was built under R version 4.2.3|
-lipidomics|stem|e2fe3f4303997aab|7940706ee8ea8eb8|74cf55e34db4cd4e|-1170387675||t19670.3899335482s|30e7dd23cf8c9239|4884|rds|local|vector|||1.41||
+df_stats_by_metabolite|stem|e14dfa63df29811c|06bc50c38cf95e77|ad8e9784c096644d|1571712024||t19670.5167126469s|a0252f4d8dc0f410|403|rds|local|vector|||0.032||
+fig_metabolite_distribution|stem|eb84ab476256a087|fab028a148ebe7e6|6390de5647ae32b3|1263992679||t19670.5167134154s|290d1da874df929b|83879|rds|local|vector|||0.017||
+file|stem|301125be9d4645ea|41619bbc02c4928d|ef46db3751d8e999|-1301001980|/Users/andersaskeland/during_course/AdvancedR3/data/lipidomics.csv|t19670.5147168981s|6f631a918b070454|24313|file|local|vector|||1.085||
+lipidomics|stem|697f42c227e4228b|7940706ee8ea8eb8|74cf55e34db4cd4e|-1170387675||t19670.5167122046s|30e7dd23cf8c9239|4884|rds|local|vector|||0.168||
 plot_distributions|function|f02ad1ee39314fc6|||||||||||||||
-quarto_doc|stem|9138c307033b7972|d3457f74e24f7da9|62a06538578f42c4|1886859688|doc/learning.html*doc/learning.qmd|t19670.4498173547s|801f68619ec39c1a|17461|file|local|vector|||23.17||
+quarto_doc|stem|c633a09c05432136|d3457f74e24f7da9|8778b46da5d6bf6f|1886859688|doc/learning.html*doc/learning.qmd|t19670.5168280828s|6f2e9eaf2e538639|18173|file|local|vector|||9.927||
