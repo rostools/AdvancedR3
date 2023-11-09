@@ -15,7 +15,10 @@ Imports:
     tidyr,
     usethis,
     styler,
-    targets
+    targets,
+    ggplot2,
+    tarchetypes,
+    quarto
 Encoding: UTF-8
 Suggests: 
     gitcreds,
