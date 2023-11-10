@@ -1,9 +1,19 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|dbd8c61730dfaaf1|||||||||||||||
+.Random.seed|object|d8602eedf9e82d3b|||||||||||||||
+add_original_metabolite_names|function|ab21d023df5da19e|||||||||||||||
+calculate_estimates|function|82e7887c386cb1b2|||||||||||||||
+column_values_to_snake_case|function|074e817e19db405b|||||||||||||||
+create_model_workflow|function|60065308e570c7e4|||||||||||||||
+create_recipe_spec|function|275e43bdda3dd47a|||||||||||||||
 descriptive_stats|function|51a9420415a7af6a|||||||||||||||
-df_stats_by_metabolite|stem|e14dfa63df29811c|06bc50c38cf95e77|ad8e9784c096644d|1571712024||t19670.5167126469s|a0252f4d8dc0f410|403|rds|local|vector|||0.032||
-fig_metabolite_distribution|stem|eb84ab476256a087|fab028a148ebe7e6|6390de5647ae32b3|1263992679||t19670.5167134154s|290d1da874df929b|83879|rds|local|vector|||0.017||
-file|stem|301125be9d4645ea|41619bbc02c4928d|ef46db3751d8e999|-1301001980|/Users/andersaskeland/during_course/AdvancedR3/data/lipidomics.csv|t19670.5147168981s|6f631a918b070454|24313|file|local|vector|||1.085||
-lipidomics|stem|697f42c227e4228b|7940706ee8ea8eb8|74cf55e34db4cd4e|-1170387675||t19670.5167122046s|30e7dd23cf8c9239|4884|rds|local|vector|||0.168||
+df_model_estimates|stem|cecb9ff33ca0cc14|c54121e4cf891739|40853715001710f3|694756191||t19671.3980129686s|dff923d388a70b81|856|rds|local|vector|||1.372|glm.fit algorithm did not converge. glm.fit fitted probabilities numerically 0 or 1 occurred. glm.fit fitted probabilities numerically 0 or 1 occurred|
+df_stats_by_metabolite|stem|188fd53bf88899de|06bc50c38cf95e77|da18999eac4ff445|1571712024||t19671.3169372968s|a0252f4d8dc0f410|403|rds|local|vector|||0.033||
+fig_metabolite_distribution|stem|1098b49f460db128|fab028a148ebe7e6|a0f01010b0e540a4|1263992679||t19671.316938045s|e9a7b0b060981d17|87592|rds|local|vector|||0.016||
+file|stem|301125be9d4645ea|41619bbc02c4928d|ef46db3751d8e999|-1301001980|/Users/mjl259/Desktop/AdvancedR3/data/lipidomics.csv|t19670.8816564997s|6f631a918b070454|24313|file|local|vector|||2.644||
+generate_model_results|function|6a9305f91da0e052|||||||||||||||
+lipidomics|stem|8110ea86c4ca2fb8|7940706ee8ea8eb8|74cf55e34db4cd4e|-1170387675||t19671.3169367928s|30e7dd23cf8c9239|4884|rds|local|vector|||0.359||
+metabolites_to_wider|function|8eff1105ed5e7f18|||||||||||||||
 plot_distributions|function|f02ad1ee39314fc6|||||||||||||||
-quarto_doc|stem|c633a09c05432136|d3457f74e24f7da9|8778b46da5d6bf6f|1886859688|doc/learning.html*doc/learning.qmd|t19670.5168280828s|6f2e9eaf2e538639|18173|file|local|vector|||9.927||
+quarto_doc|stem|8284760014781233|d3457f74e24f7da9|d06f15012d71c1da|1886859688|doc/learning.html*doc/learning.qmd|t19671.4043189832s|f8469d5deb54d541|23877|file|local|vector|||11.601||
+split_by_metabolite|function|a2e9ee2dd226dea7|||||||||||||||
+tidy_model_output|function|4ff0d9127acce476|||||||||||||||

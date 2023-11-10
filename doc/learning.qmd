@@ -32,91 +32,24 @@ tar_read(fig_metabolite_distribution)
 
 ## Building the model
 
+### Running multiple models
+
 ```{r}
-log_reg_specs <- logistic_reg() %>%
-  set_engine("glm")
-log_reg_specs
+model_estimates <- lipidomics %>% 
+    split_by_metabolite() %>% 
+    map(generate_model_results) %>%
+    list_rbind() %>% 
+    filter(str_detect(term, "metabolite_"))
+model_estimates
 ```
 
 ```{r}
-lipidomics_wide <- lipidomics %>%
-  mutate(metabolite = snakecase::to_snake_case(metabolite)) %>%
-  pivot_wider(names_from = metabolite, values_from = value, values_fn = mean, names_prefix = "metabolite_")
-lipidomics_wide
-```
+lipidomics %>% 
+    select(metabolite) %>% 
+    mutate(term = metabolite) %>% 
+    column_values_to_snake_case(term) %>% 
+    mutate(term = str_c("metabolite_", term)) %>% 
+    distinct(term, metabolite) %>% 
+    right_join(model_estimates, by = "term")
 
-```{r}
-lipidomics %>%
-  column_values_to_snake_case()
-```
-
-```{r}
-lipidomics %>%
-  column_values_to_snake_case(metabolite)
-```
-
-```{r}
-lipidomics %>%
-  metabolites_to_wider()
-```
-
-```{r}
-recipe(class ~ metabolite_lipid_ch_3_1 + age + gender, data = lipidomics_wide)
-```
-
-```{r}
-recipe(lipidomics_wide) %>%
-  update_role(metabolite_lipid_ch_3_1, age, gender, new_role = "predictor") %>%
-  update_role(class, new_role = "outcome") %>%
-  step_normalize(starts_with("metabolite_"))
-```
-
-```{r}
-recipe_specs <- lipidomics_wide %>%
-  create_recipe_spec(metabolite_lipid_ch_3_1)
-recipe_specs
-```
-
-```{r}
-workflow() %>%
-  add_model(log_reg_specs) %>%
-  add_recipe(recipe_specs)
-```
-
-```{r}
-model_workflow <- create_model_workflow(
-  logistic_reg() %>%
-    set_engine("glm"),
-  lipidomics_wide %>%
-    create_recipe_spec(metabolite_lipid_ch_3_1)
-)
-model_workflow
-```
-
-```{r}
-fitted_model <- model_workflow %>%
-  fit(lipidomics_wide)
-fitted_model
-```
-
-```{r}
-fitted_model %>%
-  extract_fit_parsnip() %>%
-  tidy(exponentiate = TRUE)
-```
-
-```{r}
-fitted_model %>%
-  tidy_model_output()
-```
-
-```{r}
-create_model_workflow(
-  logistic_reg() %>%
-    set_engine("glm"),
-  lipidomics_wide %>%
-    create_recipe_spec(metabolite_lipid_ch_3_1)
-) %>%
-  fit(lipidomics_wide) %>%
-  tidy_model_output()
 ```
