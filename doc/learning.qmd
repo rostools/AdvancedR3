@@ -1,6 +1,9 @@
 ---
 title: "Draft R Markdown document"
-author: "Your Name"
+author: 
+  - name: Signe Kirk Brødbæk
+    affiliations: 
+      - name: Steno Diabetes Center Aarhus
 format: html
 editor:
   markdown:
