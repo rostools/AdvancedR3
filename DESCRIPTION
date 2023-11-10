@@ -32,3 +32,4 @@ BugReports: https://github.com/rostools/AdvancedR3/issues
 Depends: 
     tidymodels,
     tidyverse
+License: CC BY 4.0
