@@ -4,3 +4,4 @@
 .DS_Store
 .quarto
 .Rbuildignore
+data-raw/nmr-omics/
