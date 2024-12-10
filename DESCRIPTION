@@ -16,6 +16,7 @@ Imports:
 Encoding: UTF-8
 Suggests: 
     gitcreds,
+    styler,
     usethis
 URL: https://github.com/rostools/AdvancedR3
 BugReports: https://github.com/rostools/AdvancedR3/issues
