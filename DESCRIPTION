@@ -15,4 +15,7 @@ Imports:
     tidyr
 Encoding: UTF-8
 Suggests: 
+    gitcreds,
     usethis
+URL: https://github.com/rostools/AdvancedR3
+BugReports: https://github.com/rostools/AdvancedR3/issues
