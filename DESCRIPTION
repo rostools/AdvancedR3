@@ -21,3 +21,5 @@ Suggests:
     usethis
 URL: https://github.com/rostools/AdvancedR3
 BugReports: https://github.com/rostools/AdvancedR3/issues
+Depends: 
+    tidyverse
