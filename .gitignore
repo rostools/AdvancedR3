@@ -5,3 +5,4 @@
 .quarto
 .Rbuildignore
 data-raw/nmr-omics/
+_targets.yaml
