@@ -8,13 +8,16 @@ Imports:
     ggplot2,
     here,
     knitr,
+    parsnip,
     readr,
     readxl,
+    recipes,
     rmarkdown,
     snakecase,
     stringr,
     targets,
-    tidyr
+    tidyr,
+    workflows
 Encoding: UTF-8
 Suggests: 
     gitcreds,
@@ -23,4 +26,5 @@ Suggests:
 URL: https://github.com/rostools/AdvancedR3
 BugReports: https://github.com/rostools/AdvancedR3/issues
 Depends: 
+    tidymodels,
     tidyverse
