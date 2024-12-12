@@ -25,3 +25,48 @@ tar_read(df_stats_by_metabolite) |>
 ```{r}
 tar_read(fig_metabolite_distribution)
 ```
+
+## Bulding the model
+
+```{r}
+log_reg_specs <- logistic_reg() |>
+    set_engine("glm")
+log_reg_specs
+```
+
+```{r}
+lipidomics_wide <- lipidomics |> 
+    column_values_to_snake_case(metabolite) |> 
+    metabolites_to_wider()
+lipidomics_wide
+```
+
+```{r}
+recipe_specs <- lipidomics_wide |> 
+    create_recipe_spec(metabolite_cholesterol)
+recipe_specs
+```
+
+```{r}
+model_workflow <- create_model_workflow(
+   logistic_reg() |> 
+       set_engine("glm"),
+   lipidomics_wide |> 
+       create_recipe_spec(metabolite_cholesterol)
+) |> 
+    fit(lipidomics_wide) |> 
+    tidy_model_output()
+
+model_workflow
+```
+
+```{r}
+fitted_model <- model_workflow |> 
+    fit(lipidomics_wide)
+fitted_model
+```
+
+```{r}
+fitted_model |> 
+    tidy_model_output()
+```
