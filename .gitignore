@@ -8,3 +8,6 @@
 # Quarto folder to ignore
 .quarto
 data-raw/nmr-omics/
+_targets.yaml
+*_files
+*.html

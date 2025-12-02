@@ -7,7 +7,12 @@ format: html
 ## Header 1
 
 ```{r setup}
-#| include: false
+library(targets)
+tar_config_set(store = here::here("_targets"))
+source(here::here("R/functions.R"))
+lipidomics <- tar_read(lipidomics)
+
+
 ```
 
 ```{r}

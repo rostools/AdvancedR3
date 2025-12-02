@@ -9,10 +9,12 @@ Imports:
     dplyr,
     fs,
     here,
+    quarto,
     readr,
     readxl,
     snakecase,
     stringr,
+    tarchetypes,
     targets,
     tidyr
 Suggests: 
