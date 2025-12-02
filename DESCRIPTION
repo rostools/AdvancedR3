@@ -15,4 +15,5 @@ Imports:
     stringr,
     tidyr
 Suggests: 
+    styler,
     usethis
