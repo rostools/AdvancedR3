@@ -8,6 +8,7 @@ BugReports: https://github.com/rostools/AdvancedR3/issues
 Imports: 
     dplyr,
     fs,
+    glue,
     here,
     quarto,
     readr,
@@ -20,3 +21,5 @@ Imports:
 Suggests: 
     styler,
     usethis
+Depends: 
+    tidyverse
