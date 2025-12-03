@@ -53,6 +53,15 @@ clean(lipidomics)
 ```
 
 ```{r}
+lipidomics |>
+  filter(metabolite == "Cholesterol") |>
+  mutate(
+    class = as.factor(class),
+    value = scale(value)
+  )
+```
+
+```{r}
 just_cholesterol <- lipidomics |>
   filter(metabolite == "Cholesterol") |>
   preprocess()
