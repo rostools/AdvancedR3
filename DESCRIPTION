@@ -6,6 +6,7 @@ Encoding: UTF-8
 URL: https://github.com/rostools/AdvancedR3
 BugReports: https://github.com/rostools/AdvancedR3/issues
 Imports: 
+    broom,
     dplyr,
     fs,
     ggplot2,
