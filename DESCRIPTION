@@ -17,7 +17,8 @@ Imports:
     stringr,
     tarchetypes,
     targets,
-    tidyr
+    tidyr,
+    tidyselect
 Suggests: 
     styler,
     usethis
