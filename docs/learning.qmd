@@ -32,3 +32,24 @@ tar_read(table_descriptive_stats) |>
 ```{r}
 tar_read(plot_distributions)
 ```
+
+## Preparing the data
+
+```{r}
+lipidomics |>
+  count(code, metabolite) |>
+  filter(n > 1)
+```
+
+```{r}
+lipidomics |>
+  group_by(pick(-value)) |>
+  summarise(value = mean(value), .groups = "keep") |>
+  ungroup()
+```
+
+```{r}
+
+
+clean(lipidomics)
+```
