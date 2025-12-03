@@ -15,3 +15,17 @@ create_table_descriptive_stats <- function(data) {
     dplyr::mutate(MeanSD = glue::glue("{value_mean} ({value_sd})")) |>
     dplyr::select(Metabolite = metabolite, `Mean SD` = MeanSD)
 }
+## This should be in the R/functions.R file.
+#' Plot for basic distribution of metabolite data.
+#'
+#' @param data The lipidomics dataset.
+#'
+#' @return A plot object.
+#'
+create_plot_distributions <- function(data) {
+  data |>
+    ggplot2::ggplot(ggplot2::aes(x = value)) +
+    ggplot2::geom_histogram() +
+    ggplot2::facet_wrap(ggplot2::vars(metabolite), scales = "free") +
+    ggplot2::theme_minimal()
+}
