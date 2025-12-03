@@ -18,11 +18,23 @@ lipidomics <- tar_read(lipidomics)
 
 ## Making a table
 
-```{r}
+## Results: basic stats table
 
-  
+```{r}
+tar_read(table_descriptive_stats) |>
+  knitr::kable(
+    caption = "The mean and standard deviation of metabolites in the lipidomics dataset."
+  )
 ```
 
-```{r}
+## Plot of distributions
 
+```{r}
+ggplot(
+  lipidomics,
+  aes(x = value)
+) +
+  geom_histogram() +
+  facet_wrap(vars(metabolite), scales = "free") +
+  theme_minimal()
 ```

@@ -8,6 +8,7 @@ BugReports: https://github.com/rostools/AdvancedR3/issues
 Imports: 
     dplyr,
     fs,
+    ggplot2,
     glue,
     here,
     quarto,
