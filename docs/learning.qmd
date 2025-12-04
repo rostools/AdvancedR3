@@ -55,15 +55,6 @@ just_cholesterol <- lipidomics |>
   filter(metabolite == "Cholesterol") |>
   preprocess()
 
-fit_all_models <- function(data) {
-  list(
-    class ~ value,
-    class ~ value + gender + age
-  ) |>
-    purrr::map(\(model) fit_model(data, model = model)) |>
-    purrr::list_rbind()
-}
-
 lipidomics |> 
   filter(metabolite == "Cholesterol") |> 
   preprocess() |> 
