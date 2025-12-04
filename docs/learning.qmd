@@ -3,7 +3,7 @@ title: "Draft Quarto document"
 author: "Your Name"
 format: html
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ## Header 1
@@ -48,33 +48,32 @@ lipidomics |>
   ungroup()
 ```
 
-```{r}
-clean(lipidomics)
-```
-
-```{r}
-lipidomics |>
-  filter(metabolite == "Cholesterol") |>
-  mutate(
-    class = as.factor(class),
-    value = scale(value)
-  )
-```
+## Running multiple models
 
 ```{r}
 just_cholesterol <- lipidomics |>
   filter(metabolite == "Cholesterol") |>
   preprocess()
 
-glm(
-  formula = class ~ value,
-  data = just_cholesterol,
-  family = binomial
-) |>
-  broom::tidy(exponentiate = TRUE) |>
-  mutate(
-    metabolite = unique(just_cholesterol$metabolite),
-    model = format(class ~ value),
-    .before = everything()
-  )
+fit_all_models <- function(data) {
+  list(
+    class ~ value,
+    class ~ value + gender + age
+  ) |>
+    purrr::map(\(model) fit_model(data, model = model)) |>
+    purrr::list_rbind()
+}
+
+lipidomics |> 
+  filter(metabolite == "Cholesterol") |> 
+  preprocess() |> 
+  fit_all_models()
+```
+
+```{r}
+lipidomics |>
+  group_split(metabolite) |>
+  map(preprocess) |>
+  map(fit_all_models) |>
+  list_rbind()
 ```

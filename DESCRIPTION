@@ -12,6 +12,7 @@ Imports:
     ggplot2,
     glue,
     here,
+    purrr,
     quarto,
     readr,
     readxl,
