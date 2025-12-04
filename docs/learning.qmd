@@ -62,9 +62,6 @@ lipidomics |>
 ```
 
 ```{r}
-lipidomics |>
-  group_split(metabolite) |>
-  map(preprocess) |>
-  map(fit_all_models) |>
-  list_rbind()
+tar_read(model_results) |>
+    knitr::kable(caption = "Results from the analysis from all metabolites and models.")
 ```
